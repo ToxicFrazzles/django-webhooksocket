@@ -17,6 +17,6 @@ class IdentConverter:
 register_converter(IdentConverter, 'ident')
 
 urlpatterns = [
-    path('hooks/<ident:ident>', views.dummy, name='hooks'),
+    path('hooks/<ident:ident>', views.hooks, name='hooks'),
     path('sockets/<ident:ident>', views.dummy, name='sockets')
 ]
