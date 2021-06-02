@@ -16,7 +16,7 @@ def boot_django():
             }
         },
         INSTALLED_APPS=(
-            "receipts",
+            "webhooksocket",
         ),
         TIME_ZONE="UTC",
         USE_TZ=True,
