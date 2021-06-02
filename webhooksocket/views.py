@@ -4,7 +4,10 @@ from .models import Bridge
 
 
 def hooks(request, ident):
-    bridge = Bridge.objects.get(hook_ident=ident)
+    try:
+        bridge = Bridge.objects.get(hook_ident=ident)
+    except Bridge.DoesNotExist:
+        return HttpResponse(b"Thanks but no thanks!")
     print(bridge.name)
     return HttpResponse(b"Thanks!")
 
