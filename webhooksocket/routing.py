@@ -18,5 +18,5 @@ class IdentConverter:
 register_converter(IdentConverter, 'ident')
 
 websocket_urlpatterns = [
-    path('whs/sockets/<ident:ident>', consumers.SocketConsumer.as_asgi(), name='sockets')
+    path('sockets/<ident:ident>', consumers.SocketConsumer.as_asgi(), name='sockets')
 ]
