@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from channels.layers import get_channel_layer
+from django.views.decorators.csrf import csrf_exempt
 from asgiref.sync import async_to_sync
 from .models import Bridge
 
 
+@csrf_exempt
 def hooks(request, ident):
     try:
         bridge = Bridge.objects.get(hook_ident=ident)
