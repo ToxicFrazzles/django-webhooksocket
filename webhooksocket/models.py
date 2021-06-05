@@ -31,3 +31,6 @@ class Bridge(models.Model):
         return reverse('webhooksocket:sockets', kwargs={
             "ident": self.socket_ident
         })
+
+    def __str__(self):
+        return self.name
